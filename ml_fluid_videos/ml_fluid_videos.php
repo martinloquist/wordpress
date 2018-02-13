@@ -16,12 +16,12 @@ _/ ____\  |  __ __|__| __| _/ ___  _|__| __| _/____  ____  ______
 
 function ml_add_video_wrapper($content) {
 	
-	$content = preg_replace( "/<object/Si", '<div class="mlvideowrapper"><object', $content );
-	$content = preg_replace( "/<\/object>/Si", '</object></div>', $content );
+	$content = preg_replace( "/<object/Si", "<div class='mlvideowrapper'><object", $content );
+	$content = preg_replace( "/<\/object>/Si", "</object></div>", $content );
 	
 	/** It's been a couple of years. There's iFrames now! */
-	$content = preg_replace( "/<iframe.+?src=\"(.+?)\"/Si", '<div class="mlvideowrapper"><iframe src="\1" frameborder="0" allowfullscreen>', $content );
-	$content = preg_replace( "/<\/iframe>/Si", '</iframe></div>', $content );
+	$content = preg_replace( "/<iframe.+?src=\"(.+?)\"/Si", "<div class='mlvideowrapper'><iframe src='1' frameborder='0' allowfullscreen>", $content );
+	$content = preg_replace( "/<\/iframe>/Si", "</iframe></div>", $content );
 
 	return $content;
 }
